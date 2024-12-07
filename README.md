@@ -9,19 +9,22 @@ Astro Task Manager is a task management application built using Astro and Prisma
 ### Prerequisites
 - Docker
 - Node.js
-- Prisma
 
 ### Getting Started
 
 1. Clone the repository:
 
     ```bash
-    git clone <repository_url>
-    cd astro-task_manager
+    git clone https://github.com/Vladimir2ht/astro-svelte-task-manager.git
+    cd astro-svelte-task-manager
     ```
 
 2. Run in docker
 
+    ```bash
+    docker compose up --build -d
+    ```
+    or
     ```bash
     make up
     ```
@@ -29,7 +32,7 @@ Astro Task Manager is a task management application built using Astro and Prisma
 3. Run locally:
 
     ```bash
-    npm run init 
+    npm run init
     npm run dev
     ```
 

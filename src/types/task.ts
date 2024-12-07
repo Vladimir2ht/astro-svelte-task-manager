@@ -1,14 +1,15 @@
-export enum ETaskPriority {
-  LOW = 'low',
-  MEDIUM = 'medium',
-  HIGHT = 'high',
-}
+export const ETaskPriority = {
+	LOW: 'low',
+	MEDIUM: 'medium',
+	HIGHT: 'high',
+} as const
 
+export type TaskPriority = typeof ETaskPriority[keyof typeof ETaskPriority];
 export interface ITask {
-  id: number;
-  title: string;
-  description?: string;
-  priority: ETaskPriority;
-  dueDate: string;
-  isCompleted: boolean;
+	id: number;
+	title: string;
+	description?: string;
+	priority: typeof ETaskPriority[keyof typeof ETaskPriority];
+	dueDate: string;
+	isCompleted: boolean;
 }

@@ -9,6 +9,6 @@ CREATE TABLE "Task" (
 
 INSERT INTO "Task" ("title", "description", "priority", "dueDate", "isCompleted")
 VALUES
-  ('Task 1', 'Description of task 1', 'High', '2024-12-10 09:00:00', false),
-  ('Task 2', 'Description of task 2', 'Medium', '2024-12-12 10:00:00', false),
-  ('Task 3', 'Description of task 3', 'Low', '2024-12-15 11:00:00', true);
+  ('Task 1', 'Description of task 1', 'high', '2024-12-10 09:00:00', false),
+  ('Task 2', 'Description of task 2', 'medium', '2024-12-12 10:00:00', false),
+  ('Task 3', 'Description of task 3', 'low', '2024-12-15 11:00:00', true);

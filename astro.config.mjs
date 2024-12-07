@@ -4,7 +4,7 @@ import node from '@astrojs/node';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  output: "server",
+  output: "hybrid",
   server: {
     port: 4321,
     host: '0.0.0.0',
