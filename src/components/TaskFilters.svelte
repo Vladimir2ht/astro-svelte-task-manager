@@ -2,15 +2,16 @@
 	import { onMount } from "svelte";
 	import { ETaskPriority } from "../types/task";
 
+	let { fetchTasks }: { fetchTasks: () => Promise<void> } = $props();
+
 	let priority: string | null = $state("");
 	let completedOnly = $state(false);
 
 	onMount(() => {
 		const params = new URLSearchParams(window.location.search);
-		
+
 		priority = params.get("priority") || "";
 		completedOnly = params.get("isCompleted") === "true";
-		console.log(priority, completedOnly);
 	});
 
 	const applyFilters = async (clear = false) => {
@@ -19,7 +20,6 @@
 			priority?: string;
 			isCompleted?: string;
 		} = {};
-		console.log("applyFilters", clear);
 
 		if (clear) {
 			const keys = Array.from(params.keys());
@@ -41,9 +41,8 @@
 
 		const newUrl = `${window.location.pathname}?${params.toString()}`;
 		window.history.replaceState(null, "", newUrl);
-		console.log(newUrl);
 
-		window.location.replace(newUrl);
+		await fetchTasks();
 	};
 </script>
 

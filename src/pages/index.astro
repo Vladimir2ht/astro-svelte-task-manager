@@ -1,13 +1,13 @@
 ---
-import TaskList from '../components/TaskList.astro';
-import TaskForm from '../components/TaskForm.svelte';
-
-export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import TaskList from "../components/TaskList.svelte";
+import TaskForm from "../components/TaskForm.svelte";
 ---
-<h1 class="text-3xl text-center mb-5">Task manager</h1>
-<section style="width: 100%;" class="flex justify-center">
-	<div style="width: 600px;" class="flex flex-col items-center justify-center">
+
+<Layout>
+	<h1 class="text-3xl text-center mb-5">Task manager</h1>
+	<div class="flex flex-col items-center justify-center min-w-80">
 		<TaskForm client:load />
-		<TaskList />
+		<TaskList client:load />
 	</div>
-</section>
+</Layout>
