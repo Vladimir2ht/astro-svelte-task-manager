@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Error from "./ErrorTextBlock.svelte";
 	import { ETaskPriority } from "../types/task";
 	import { actions } from "astro:actions";
 
@@ -49,16 +50,11 @@
 			class="bg-blue-500 text-white px-4 py-2 rounded"
 			on:click|preventDefault={submitTask}
 		>
-			Add Task
+			Add task
 		</button>
 
 		{#if !!errorText}
-			<div
-				class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-				role="alert"
-			>
-				{errorText}
-			</div>
+			<Error {errorText} />
 		{/if}
 	</form>
 </div>
